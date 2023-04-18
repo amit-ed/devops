@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   annotations:
-    checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+    checksum/config: {{ include (print $.Template.BasePath "/Configmap.yaml") . | sha256sum }}
   name: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.ReplicaNumber }}
