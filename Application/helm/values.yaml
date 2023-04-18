@@ -10,14 +10,14 @@ service:
 
 probes: 
   readiness: 
-    path: /health/readiness
+    path: '/health/readiness'
     initialDelaySeconds: 1
     timeoutSeconds: 1
     periodSeconds: 10
     successThreshold: 3
     failureThreshold: 1
   liveness:
-    path: /health/liveliness
+    path: '/health/liveliness'
     initialDelaySeconds: 1
     timeoutSeconds: 1
     periodSeconds: 10
@@ -26,4 +26,4 @@ probes:
 
 volume:
   mount:
-    path: /tmp/html
+    path: '/tmp/html'
