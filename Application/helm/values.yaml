@@ -27,29 +27,3 @@ probes:
 volume:
   mount:
     path: /tmp/html
-
-
-
-
-
-
-
-    probes: 
-  readiness: 
-    path: {{ .deployment.spec.template.spec.containers.readinessProbe.httpGet.path }}
-    initialDelaySeconds: {{ .deployment.spec.template.spec.containers.readinessProbe.initialDelaySeconds }}
-    timeoutSeconds: {{ .deployment.spec.template.spec.containers.readinessProbe.timeoutSeconds }}
-    periodSeconds: {{ .deployment.spec.template.spec.containers.readinessProbe.periodSeconds }}
-    successThreshold: {{ .deployment.spec.template.spec.containers.readinessProbe.successThreshold }}
-    failureThreshold: {{ .deployment.spec.template.spec.containers.readinessProbe.failureThreshold }}
-  liveness:
-    path: {{ .deployment.spec.template.spec.containers.livenessProbe.httpGet.path }}
-    initialDelaySeconds: {{ .deployment.spec.template.spec.containers.livenessProbe.initialDelaySeconds }}
-    timeoutSeconds: {{ .deployment.spec.template.spec.containers.livenessProbe.timeoutSeconds }}
-    periodSeconds: {{ .deployment.spec.template.spec.containers.livenessProbe.periodSeconds }}
-    successThreshold: {{ .deployment.spec.template.spec.containers.livenessProbe.successThreshold }}
-    failureThreshold: {{ .deployment.spec.template.spec.containers.livenessProbe.failureThreshold }}
-    
-volume:
-  mount:
-    path: {{ .deployment.spec.template.spec.containers.volumeMounts.mountPath }}
